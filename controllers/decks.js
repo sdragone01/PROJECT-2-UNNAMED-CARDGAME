@@ -6,10 +6,6 @@ const Card = require('../models/card')
 const router = express.Router();
 
 
-  
-   
-
-
   // index route
 router.get("/", (req, res) => {
     Deck.find({})
@@ -19,6 +15,7 @@ router.get("/", (req, res) => {
       .catch((error) => {
         res.json({ error })
       })
+     
   })
 
   router.get("/", (req, res) => {
@@ -88,36 +85,21 @@ router.put("/:id", (req, res) => {
       });
   });
 
-  function show(req, res) {
-    Deck.findById(req.params.id)
-      .populate('cardCol').exec(function(err, deck) {
-      
-        Card.find(
-          {_id: {$nin: deck.cast}},
-          function(err, cards) {
-            console.log(cards);
-            res.render('decks/show', {
-              title: 'Deck Detail', deck, cards
-            });
-          }
-        );
-      });
-  }
   // show route
 router.get("/:id", (req, res) => {
-    // get the id from params
     const id = req.params.id;
-  
-    // find the particular card from the database
     Deck.findById(id)
       .then((deck) => {
-        // render the template with the data from the database
+       
         res.render("decks/show.liquid", { deck });
       })
       .catch((error) => {
         console.log(error);
         res.json({ error });
       });
+     
+      
+
   });
 //////////////////////////////////////////
 // Export the Router

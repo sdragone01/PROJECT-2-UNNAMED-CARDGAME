@@ -6,6 +6,7 @@ const { Schema, model } = mongoose;
 
 
 const cardSchema = new Schema({
+    
     name: {
         type: String,
         required: true,
