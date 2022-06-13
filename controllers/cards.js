@@ -3,9 +3,6 @@
 ////////////////////////////////////////
 const express = require("express");
 const Card = require("../models/card");
-const Deck = require("../models/card");
-
-
 
 /////////////////////////////////////////
 // Create Route
@@ -137,17 +134,6 @@ router.get("/:id", (req, res) => {
         res.json({ error });
       });
   });
-
-
-function addToDeck(req, res) {
-  Deck.findById(req.params.id, function(err, deck) {
-    deck.cardCol.push(req.body.cardId);
-    deck.save(function(err) {
-      res.redirect(`/deck/${deck._id}`);
-    });
-  });
-}
-
 //////////////////////////////////////////
 // Export the Router
 //////////////////////////////////////////
