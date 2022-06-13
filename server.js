@@ -62,6 +62,16 @@ router.use("/decks", DeckRouter)
 
 router.use("/user", UserRouter);
 
+  ////////////////////////////////////////////
+// home Route
+////////////////////////////////////////////
+
+router.use("/home",(req,res)=>{
+  res.render("home.liquid")
+});
+
+
+
 
 
 router.get("/", (req, res) => {

@@ -1,6 +1,7 @@
 
 const express = require("express");
 const Deck = require("../models/deck");
+const Card = require('../models/card')
 
 const router = express.Router();
 
@@ -87,6 +88,21 @@ router.put("/:id", (req, res) => {
       });
   });
 
+  function show(req, res) {
+    Deck.findById(req.params.id)
+      .populate('cardCol').exec(function(err, deck) {
+      
+        Card.find(
+          {_id: {$nin: deck.cast}},
+          function(err, cards) {
+            console.log(cards);
+            res.render('decks/show', {
+              title: 'Deck Detail', deck, cards
+            });
+          }
+        );
+      });
+  }
   // show route
 router.get("/:id", (req, res) => {
     // get the id from params

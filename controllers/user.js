@@ -37,7 +37,7 @@ router.post("/login", async (req, res) => {
           req.session.username = username;
           req.session.loggedIn = true;
           // redirect to fruits page if successful
-          res.redirect("/cards");
+          res.redirect("/home");
         } else {
           // error if password doesn't match
           res.json({ error: "password doesn't match" });

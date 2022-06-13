@@ -1,9 +1,10 @@
 {% layout "layout.liquid" %} {% block content %}
 <div class="top">
-    <h1>decks</h1>
+    <h1>decks</h1> <a href="/home"><button>Home</button></a>
 </div>
 <div>
     <a href="/decks/new"><button>Create A New deck</button></a>
+   
   {% for deck in decks %}
   <article>
     <a href="/decks/{{ deck._id }}">
