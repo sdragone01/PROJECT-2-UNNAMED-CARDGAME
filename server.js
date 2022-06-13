@@ -4,6 +4,8 @@ const methodOverride = require("method-override")
 const app = require('liquid-express-views')(express())
 
 
+const cards = require('./models/card.js')
+
 
 app.use(express.urlencoded({extended:false}));
 app.use(express.static('public'));
