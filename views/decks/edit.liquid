@@ -1,0 +1,16 @@
+{% layout "layout.liquid" %} {% block content %}
+<div>
+    <form action="/decks/{{deck._id}}?_method=PUT" method="post">
+    <fieldset>
+      <legend>Edit {{deck.name}}</legend>
+      <label>
+        NAME:<input type="text" name="name" value="{{deck.name}}"  />
+      </label>
+      <label>
+        genre:<input type="text" name="genre" value="{{deck.genre}}" />
+      </label>
+
+    </fieldset>
+    <input type="submit" value="Edit" />
+  </form>
+</div>

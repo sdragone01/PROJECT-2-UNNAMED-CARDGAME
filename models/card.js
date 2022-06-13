@@ -1,9 +1,11 @@
-const mongoose = require('mongoose')
 
-const { Schema, model } = mongoose
+const mongoose = require("./connection");
+
+
+const { Schema, model } = mongoose;
+
 
 const cardSchema = new Schema({
-
     name: {
         type: String,
         required: true,
@@ -39,9 +41,11 @@ const cardSchema = new Schema({
         required:true,
 
     },
+    username: String,
 
 })
 
 const Card = model("Card",cardSchema)
+
 
 module.exports = Card;

@@ -1,28 +1,75 @@
-const express = require("express")
-const app = require('liquid-express-views')(express())
-const mongoose = require('mongoose')
-const mongoURI = "mongodb://127.0.0.1:27017/cards"
+require("dotenv").config();
+const express = require("express"); // import express
 const morgan = require("morgan"); //import morgan
-const db = mongoose.connection
-mongoose.connect(mongoURI);
-mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
+const methodOverride = require("method-override");
+const mongoose = require("mongoose");
+const path = require("path")
+const session = require("express-session");
+const MongoStore = require("connect-mongo");
+
+//card variables
+const CardRouter = require("./controllers/cards");
+const Card = require("./models/card")
+
+//decl variables
+const DeckRouter = require("./controllers/decks");
+const Deck = require("./models/deck")
+
+//user variables
+
+const UserRouter = require("./controllers/user");
 
 
 
-const cards = require('./models/card.js')
-
-
-app.use(express.urlencoded({extended:false}));
-app.use(express.static('public'));
+const router = require("liquid-express-views")(express(), {root: [path.resolve(__dirname, 'views/')]})
 
 
 
-app.get('/',(req,res) => {
-    res.send("hello jamboy")
-})
+/////////////////////////////////////////////////////
+// Middleware
+/////////////////////////////////////////////////////
+router.use(morgan("tiny"))
+router.use(methodOverride("_method"))
+router.use(express.urlencoded({ extended: true }))
+router.use(express.static("public"))
+
+router.use(
+  session({
+    secret: process.env.SECRET,
+    store: MongoStore.create({ mongoUrl: process.env.DATABASE_URL }),
+    saveUninitialized: true,
+    resave: false,
+  })
+);
 
 
 
-app.listen(3000,()=>{
-    console.log("listning to port 3000")
-})
+  ////////////////////////////////////////////
+// CARD Routes
+////////////////////////////////////////////
+
+router.use("/cards", CardRouter)
+
+  ////////////////////////////////////////////
+// deck Routes
+////////////////////////////////////////////
+
+router.use("/decks", DeckRouter)
+
+  ////////////////////////////////////////////
+// user Routes
+////////////////////////////////////////////
+
+router.use("/user", UserRouter);
+
+
+
+router.get("/", (req, res) => {
+  res.render("index.liquid");
+});
+
+  
+
+
+const PORT = process.env.PORT;
+router.listen(PORT, () => console.log(`Now Listening on port ${PORT}`));

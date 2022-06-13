@@ -1,0 +1,18 @@
+{% layout "layout.liquid" %} {% block content %}
+<div class="top">
+    <h1>Cards</h1>
+</div>
+<div>
+  <a href="/user/logout"><button>Logout</button></a>
+    <a href="/cards/new"><button>Create A New card</button></a>
+  {% for card in cards %}
+  <article>
+    <a href="/cards/{{ card._id }}">
+      <h2>
+        {{card.name}} 
+      </h2>
+    </a>
+  </article>
+  {% endfor %}
+</div>
+{% endblock %}

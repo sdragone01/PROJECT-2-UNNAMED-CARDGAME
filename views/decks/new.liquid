@@ -1,0 +1,17 @@
+{% layout "layout.liquid" %} {% block content %}
+<div>
+  <form action="/decks" method="post">
+    <fieldset>
+      <legend>Create a New Deck</legend>
+      <label>
+        NAME:<input type="text" name="name"  />
+      </label>
+      <label>
+        Genre:<input type="text" name="genre"  />
+      </label>
+      
+    </fieldset>
+    <input type="submit" value="create new deck" />
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% layout "layout.liquid" %} {% block content %}
+      <div>
+        <article>
+          <h2>
+            {{ card.name }} 
+          </h2>
+          <h3>{{ card.level }}</h3> <br/>
+          <h3>{{ card.genre }}</h3> <br/>
+          <h3>{{ card.atk_points }}</h3> <br/>
+          <h3>{{ card.def_points }}</h3> <br/>
+          <h3>{{ card.img }}</h3> <br/>
+          <h3>{{ card.description }}</h3> <br/>
+          <a href="/cards/{{ card._id }}/edit"><button>Edit</button></a>
+          <form action="/cards/{{ card._id }}?_method=DELETE" method="POST">
+            <input type="submit" value="Delete" />
+          </form>
+          <a href="/cards/"><button>Back to Main</button></a>
+        </article>
+      </div>
+{% endblock %}

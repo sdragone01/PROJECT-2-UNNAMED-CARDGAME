@@ -1,0 +1,31 @@
+{% layout "layout.liquid" %} {% block content %}
+<div>
+  <form action="/cards" method="post">
+    <fieldset>
+      <legend>Create a New card</legend>
+      <label>
+        NAME:<input type="text" name="name"  />
+      </label>
+      <label>
+        level:<input type="text" name="level"  />
+      </label>
+      <label>
+        genre:<input type="text" name="genre"  />
+      </label>
+      <label>
+        atk_points:<input type="text" name="atk_points"  />
+      </label>
+      <label>
+        def_points:<input type="text" name="def_points"  />
+      </label>
+      <label>
+        img:<input type="text" name="img"  />
+      </label>
+      <label>
+        description:<input type="text" name="description"  />
+      </label>
+    </fieldset>
+    <input type="submit" value="create new card" />
+  </form>
+</div>
+{% endblock %}

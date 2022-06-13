@@ -1,0 +1,31 @@
+{% layout "layout.liquid" %} {% block content %}
+<div>
+    <form action="/cards/{{card._id}}?_method=PUT" method="post">
+    <fieldset>
+      <legend>Edit {{card.name}}</legend>
+      <label>
+        NAME:<input type="text" name="name" value="{{card.name}}"  />
+      </label>
+      <label>
+        level:<input type="text" name="level" value="{{card.level}}" />
+      </label>
+      <label>
+        genre:<input type="text" name="genre" value="{{card.genre}}" />
+      </label>
+      <label>
+        atk_points:<input type="text" name="atk_points" value="{{card.atk_points}}" />
+      </label>
+      <label>
+        def_points:<input type="text" name="def_points" value="{{card.def_points}}" />
+      </label>
+      <label>
+        img:<input type="text" name="img" value="{{card.img}}" />
+      </label>
+      <label>
+        description:<input type="text" name="description" value="{{card.description}}"  />
+      </label>
+    </fieldset>
+    <input type="submit" value="Edit" />
+  </form>
+</div>
+{% endblock %}
