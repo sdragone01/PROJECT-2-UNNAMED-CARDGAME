@@ -1,6 +1,9 @@
-const {Schema, model} = mongoose
+const mongoose = require('mongoose')
+
+const { Schema, model } = mongoose
 
 const cardSchema = new Schema({
+
     name: {
         type: String,
         required: true,
@@ -28,7 +31,7 @@ const cardSchema = new Schema({
         required: true,
     },
     img:{
-        type: Image,
+        type: String,
         required: true,
     },
     description:{
