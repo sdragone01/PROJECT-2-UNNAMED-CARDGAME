@@ -1,0 +1,23 @@
+{
+  "name": "project-2-unnamed-cardgame",
+  "version": "1.0.0",
+  "description": "A CRUD application / HTML Canvas game, that will allow the player to create his or her own trading cards and decks from scratch and go head to head with friends in an online card battle.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sdragone01/PROJECT-2-UNNAMED-CARDGAME.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sdragone01/PROJECT-2-UNNAMED-CARDGAME/issues"
+  },
+  "homepage": "https://github.com/sdragone01/PROJECT-2-UNNAMED-CARDGAME#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "liquid-express-views": "^1.0.8"
+  }
+}
