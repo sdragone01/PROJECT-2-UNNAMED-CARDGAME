@@ -7,6 +7,9 @@ const path = require("path")
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 
+//image assets
+// const mainScreenImage = [{Image:"./as"}]
+
 //card variables
 const CardRouter = require("./controllers/cards");
 const Card = require("./models/card")
@@ -75,7 +78,7 @@ router.use("/home",(req,res)=>{
 
 
 router.get("/", (req, res) => {
-  res.render("index.liquid");
+  res.render("index.ejs");
 });
 
   
