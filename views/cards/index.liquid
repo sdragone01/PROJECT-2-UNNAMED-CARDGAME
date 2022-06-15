@@ -1,4 +1,4 @@
-{% layout "layout.liquid" %} {% block content %}
+
 <div class="top">
     <h1>Cards</h1>
   
@@ -17,4 +17,135 @@
   </article>
   {% endfor %}
 </div>
-{% endblock %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Decks</title>
+</head>
+<body>
+  <style>
+    body{
+      color: white;
+      display: flex;
+      justify-content: center;
+      font-family: 'Press Start 2P', cursive;
+      background-size: 50%;
+    }
+ 
+    #main{
+      position: fixed;
+      justify-content: center;
+      background: url("https://i.ibb.co/kys0P8q/evenbetterbetter.png") ;
+      width: 960px;
+      height: 540px;
+     background-size: cover;
+    }
+    #nav {
+      position: fixed;
+      margin-left: 825px;
+      margin-top: 25px;
+
+    }
+    #backToHome{
+      height: 110px;
+      background-color: transparent;
+      color: transparent;
+      border: none;
+    }
+    #backToDecks{
+      height: 80px;
+      background-color: transparent;
+      color: transparent;
+      border: none;
+    }
+    #backToCards{
+      height: 130px;
+      background-color: transparent;
+      color: transparent;
+      border: none;
+    }
+    #container{
+      position: fixed;
+      margin-top: 29px;
+      margin-left: 30px;
+    }
+    button:hover{
+      cursor: pointer;
+      transform: scale(1.1);
+        color: rgb(175, 175, 175);
+    }
+    h1{
+        margin-top: 17px;
+        margin-left: 0px;
+        font-size: 25px;
+    }
+    #newDeck{
+      font-family: 'Press Start 2P', cursive;
+      background-color: transparent;
+      border: none;
+      color: white;
+      margin-left: 125px;
+    }
+    #newDeck:hover{
+      cursor: pointer;
+      transform: scale(1.01);
+        color: rgb(175, 175, 175);
+    }
+    h2{
+      color: white;
+      width: auto;
+    }
+    h2:hover{
+      cursor: pointer;
+      transform: scale(1.01);
+        color: rgb(175, 175, 175);
+    }
+
+
+
+  </style>
+
+<div id="main">
+  <div id="container">
+    <h1>CARDS <a id="newDeck" href="/cards/new"><button id="newDeck">Create A New Card</button></a></h1> 
+<br>
+<br>
+
+    {% for card in cards %}
+<article>
+  <a href="/cards/{{ card._id }}">
+    <h2>
+      {{card.name}} 
+    </h2>
+  </a>
+</article>
+{% endfor %}
+
+</div>
+</div>
+
+<div id="nav">
+  <a id="backToHome" href="/home/"><button id="backToHome">Back to Home</button></a>
+  <br>
+  <br>
+  
+  <a id="backToDecks" href="/decks/"><button id="backToDecks">Back to Main</button></a> </br>
+  <br>
+  
+  
+  <a id="backToCards" href="/cards/"><button id="backToCards">Back to Main</button></a> </br>
+  
+  
+</div> 
+      
+
+</body>
+</html>
+
