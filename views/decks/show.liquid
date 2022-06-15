@@ -1,39 +1,142 @@
-{% layout "layout.liquid" %} {% block content %}
-      <div>
-        <article>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    body{
+      color: white;
+      display: flex;
+      justify-content: center;
+      font-family: 'Press Start 2P', cursive;
+      
+ 
+     background-size: 50%;
+    }
+    #container{
+      display: flex;
+      position: fixed;
+      width:665px;
+      height: 265px;
+      margin-top: 160px;
+      margin-left: 100px;
+      background-color: black;
+      
+    }
+    #main{
+      position: fixed;
+      justify-content: center;
+      background: url("https://i.ibb.co/x7CpXZb/evenbetter.png") ;
+      width: 960px;
+      height: 540px;
+     background-size: cover;
+    }
+    #deckTitle{
 
+      position: fixed;
+      font-size: 20px;
+      margin-left: 110px;
+      margin-top: 130px;
+    }
+    #deckGenre {
+      position: fixed;
+      margin-left: 110px;
+      margin-top: 180px;
+    }
+    #cardsInDeck{
+      position: fixed;
+      
+    }
+    #editDelete {
+      display: flex;
+    }
 
-          <h1>{{ deck.name }} </h1>
+button:hover{
+ 
+cursor: pointer;
 
-          <h2>Deck Type: </h2>
-          <h3>{{ deck.genre }}</h3>
-          
-          <ul>{{deck.cardCol}}</ul>
+}
+#backToDecks{
+  color: transparent;
+  position: fixed;
+  margin-left:720px ;
+  margin-top: -150px;
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+}
 
+#backToHome{
+  color: transparent;
+  position: fixed;
+  margin-left:720px ;
+  margin-top: -270px;
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+}
 
-          <a href="/decks/{{ deck._id }}/edit"><button>Edit</button></a>
-          <form action="/decks/{{ deck._id }}?_method=DELETE" method="POST">
-            <input type="submit" value="Delete" />
-          </form>
+    
 
+  </style>
+  <div id="main">
+    <div id="container">
+    <article>
      
-        
-          <form id="add-card-to-deck" action='/decks/{{deck._id}}' method="POST">
-            {% for card in allCards %}  
-            <input type="checkbox" name="cardId" value="{{card._id}}">
-                  
-                {{card.name}}
-                 {% endfor %}
-              
+      <h1>{{ deck.name | upcase }} </h1>
+      
 
-              </input>
-          
-           <button type="submit">Add to Deck</button>
-          </form>
-        
+    
+      <h3>Deck Type: {{ deck.genre }}</h3>
+    
+     
+      {%for cardCol in deck.cardCol%}
+      <article id="cardsInDeck">
+        <a href="/cards/{{cardCol._id}}">
+          <h3>{{cardCol.name}}</h3>
+          </a>
+      {%endfor%}
 
-
-          <a href="/decks/"><button>Back to Main</button></a>
-        </article>
+      </article>
+      <div id="editDelete">
+      <a href="/decks/{{ deck._id }}/edit"><button>Edit</button></a> </br>
+      <form action="/decks/{{ deck._id }}?_method=DELETE" method="POST">
+        <input type="submit" value="Delete" />
+      </form>
       </div>
-{% endblock %}
+ 
+    
+      <form id="add-card-to-deck" action='/decks/{{deck._id}}' method="POST">
+        {% for card in allCards %}  
+        <input type="checkbox" name="cardId" value="{{card._id}}">
+              
+            {{card.name}}
+             {% endfor %}
+          
+
+          </input>
+      
+       <button type="submit">Add to Deck</button>
+      </form>
+    
+
+
+      <a id="backToDecks" href="/decks/"><button id="backToDecks">Back to Main</button></a>
+      <a id="backToHome" href="/home/"><button id="backToHome">Back to Home</button></a>
+    </article>
+ </div> 
+</div>
+
+</body>
+</html>
+     

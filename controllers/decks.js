@@ -6,6 +6,14 @@ const Card = require('../models/card')
 
 const router = express.Router();
 
+router.use((req, res, next) => {
+  if (req.session.loggedIn) {
+    next();
+  } else {
+    res.redirect("/user/login");
+  }
+});
+
 // index route
 router.get("/", (req, res) => {
   Deck.find({})
@@ -99,7 +107,7 @@ router.get("/:id", (req, res) => {
   const id = req.params.id;
   Card.find({}).then((allCards) => {
     Deck.findById(id)
-    .populate('cardCol')
+    .populate('cardCol','name')
       .then((deck) => {
        
         res.render("decks/show.liquid", { deck, allCards });
