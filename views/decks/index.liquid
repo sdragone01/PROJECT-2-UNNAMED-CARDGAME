@@ -75,7 +75,16 @@
     }
     #newDeck:hover{
       cursor: pointer;
-      transform: scale(1.1);
+      transform: scale(1.01);
+        color: rgb(175, 175, 175);
+    }
+    h2{
+      color: white;
+      width: auto;
+    }
+    h2:hover{
+      cursor: pointer;
+      transform: scale(1.01);
         color: rgb(175, 175, 175);
     }
 
@@ -93,9 +102,7 @@
   {% for deck in decks %}
   <article>
     <a href="/decks/{{ deck._id }}">
-      <h2>
-        {{deck.name}} 
-      </h2>
+      <h2>{{deck.name}} </h2>
     </a>
   </article>
   {% endfor %}
