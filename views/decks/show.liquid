@@ -19,101 +19,117 @@
       display: flex;
       justify-content: center;
       font-family: 'Press Start 2P', cursive;
-      
+      background-size: 50%;
+    }
  
-     background-size: 50%;
-    }
-    #container{
-      display: flex;
-      position: fixed;
-      width:665px;
-      height: 265px;
-      margin-top: 160px;
-      margin-left: 100px;
-      background-color: black;
-      
-    }
     #main{
       position: fixed;
       justify-content: center;
-      background: url("https://i.ibb.co/x7CpXZb/evenbetter.png") ;
+      background: url("https://i.ibb.co/kys0P8q/evenbetterbetter.png") ;
       width: 960px;
       height: 540px;
      background-size: cover;
     }
-    #deckTitle{
-
+    #container{
       position: fixed;
-      font-size: 20px;
-      margin-left: 110px;
-      margin-top: 130px;
+      margin-top: 29px;
+      margin-left: 30px;
     }
-    #deckGenre {
+    h3{
+      color: black;
+    }
+    h2{
+      margin-top: 25px;
+    }
+    #editBtn{
       position: fixed;
-      margin-left: 110px;
-      margin-top: 180px;
+      font-family: 'Press Start 2P', cursive;
+      height: 30px;
+      margin-top: -22.8px;
+      margin-left: 235px;
+      color: rgb(198, 198, 198);
+      background-color: transparent;
+      border:none ;
     }
-    #cardsInDeck{
-      position: fixed;
-      
-    }
-    #editDelete {
-      display: flex;
-    }
-
-button:hover{
+    #editBtn:hover{
+      cursor: pointer;
  
-cursor: pointer;
+    }
+    #delete{
+      position: fixed;
+      font-family: 'Press Start 2P', cursive;
+      height: 30px;
+      margin-top: -22.8px;
+      margin-left: 280px;
+      color: rgb(255, 32, 32);
+      background-color: transparent;
+      border:none ;
+    }
+    #delete:hover{
+      cursor: pointer;
+    }
+    p{
+      color: white;
+    }
+    #nav{
+      position: fixed;
+      margin-left: 825px;
+      margin-top: 30px;
 
-}
-#backToDecks{
-  color: transparent;
-  position: fixed;
-  margin-left:720px ;
-  margin-top: -150px;
-  width: 100px;
-  height: 100px;
-  background-color: transparent;
-}
-
-#backToHome{
-  color: transparent;
-  position: fixed;
-  margin-left:720px ;
-  margin-top: -270px;
-  width: 100px;
-  height: 100px;
-  background-color: transparent;
-}
-
+    }
+    #backToHome{
+      height: 110px;
+      background-color: transparent;
+      color: transparent;
+      border: none;
+    }
+    #backToDecks{
+      height: 80px;
+      background-color: transparent;
+      color: transparent;
+      border: none;
+    }
+    #backToCards{
+      height: 130px;
+      background-color: transparent;
+      color: transparent;
+      border: none;
+    }
+    button:hover{
+      cursor: pointer;
     
+    }
 
   </style>
   <div id="main">
     <div id="container">
+
     <article>
      
-      <h1>{{ deck.name | upcase }} </h1>
-      
+      <h1>{{ deck.name | upcase }} </h1> 
 
-    
+      <a id="editBtn" href="/decks/{{ deck._id }}/edit"><button id="editBtn">Edit |</button></a>
+
+      <form id ="delete"action="/decks/{{ deck._id }}?_method=DELETE" method="POST">
+        <input id="delete" type="submit" value="Delete" />
+      </form>
+
+
       <h3>Deck Type: {{ deck.genre }}</h3>
     
-     
+     <h2>Cards In Deck:</h2>
       {%for cardCol in deck.cardCol%}
-      <article id="cardsInDeck">
+      <article >
         <a href="/cards/{{cardCol._id}}">
-          <h3>{{cardCol.name}}</h3>
+          <p>{{cardCol.name}}</p>
           </a>
       {%endfor%}
 
       </article>
-      <div id="editDelete">
-      <a href="/decks/{{ deck._id }}/edit"><button>Edit</button></a> </br>
-      <form action="/decks/{{ deck._id }}?_method=DELETE" method="POST">
-        <input type="submit" value="Delete" />
-      </form>
-      </div>
+
+     
+    
+     
  
     
       <form id="add-card-to-deck" action='/decks/{{deck._id}}' method="POST">
@@ -129,13 +145,27 @@ cursor: pointer;
        <button type="submit">Add to Deck</button>
       </form>
     
+  </article>
 
-
-      <a id="backToDecks" href="/decks/"><button id="backToDecks">Back to Main</button></a>
-      <a id="backToHome" href="/home/"><button id="backToHome">Back to Home</button></a>
-    </article>
+      
  </div> 
+ <div id="nav">
+<a id="backToHome" href="/home/"><button id="backToHome">Back to Home</button></a>
+<br>
+<br>
+
+<a id="backToDecks" href="/decks/"><button id="backToDecks">Back to Main</button></a> </br>
+<br>
+
+
+<a id="backToCards" href="/cards/"><button id="backToCards">Back to Main</button></a> </br>
+
+
+ </div>     
 </div>
+
+     
+  
 
 </body>
 </html>
