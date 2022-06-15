@@ -1,23 +1,4 @@
 
-<div class="top">
-    <h1>Cards</h1>
-  
-    <a href="/home"><button>Home</button></a>
-</div>
-<div>
-  
-    <a href="/cards/new"><button>Create A New card</button></a>
-  {% for card in cards %}
-  <article>
-    <a href="/cards/{{ card._id }}">
-      <h2>
-        {{card.name}} 
-      </h2>
-    </a>
-  </article>
-  {% endfor %}
-</div>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +8,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Decks</title>
+  <title>My Cards</title>
 </head>
 <body>
   <style>

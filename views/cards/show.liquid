@@ -1,20 +1,187 @@
-{% layout "layout.liquid" %} {% block content %}
-      <div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    body{
+      color: white;
+      display: flex;
+      justify-content: center;
+      font-family: 'Press Start 2P', cursive;
+      background-size: 50%;
+    }
+ 
+    #main{
+      position: fixed;
+      justify-content: center;
+      background: url("https://i.ibb.co/vscvN6W/new-card-screen.png") ;
+      width: 960px;
+      height: 540px;
+     background-size: cover;
+    }
+    #container{
+      position: fixed;
+      margin-top: 29px;
+      margin-left: 30px;
+    }
+    article{
+      position: fixed;
+      margin-left: 255px;
+
+    }
+    #name{
+      position:relative;
+      margin-top: 10px;
+      width: 150px;
+      max-height: 50px;
+      font-size: 100%;
+      background-color: black;
+    }
+    #level{
+      position: fixed;
+      margin-top: 15px;
+      color: black;
+    }
+    #genre{
+      position: fixed;
+      margin-top: 15px;
+      margin-left: 150px;
+      color: black;
+    }
+    #atk{
+      position: fixed;
+      margin-top: 245px;
+      font-size: x-small;
+      margin-left: 120px;
+    }
+    #descript{
+      position: fixed;
+      margin-top: 250px;
+      margin-left: 5px;
+    }
+    #desc{
+      font-size: 15px;
+    }
+    p{
+      font-size: small;
+      color: rgb(203, 203, 203);
+    }
+    #nav {
+      position: fixed;
+      margin-left: 825px;
+      margin-top: 25px;
+
+    }
+    #backToHome{
+      height: 110px;
+      background-color: transparent;
+      color: transparent;
+      border: none;
+    }
+    #backToDecks{
+      height: 80px;
+      background-color: transparent;
+      color: transparent;
+      border: none;
+    }
+    #backToCards{
+      height: 130px;
+      background-color: transparent;
+      color: transparent;
+      border: none;
+    }
+    button:hover{
+      cursor: pointer;
+      transform: scale(1.01);
+      color: rgb(175, 175, 175);
+    
+    }
+    #edit{
+      position: fixed;
+      margin-top: 165px;
+      margin-left: 0px;
+      background-color: transparent;
+      border: none;
+      font-family: 'Press Start 2P', cursive;
+      color: white;
+    }
+    #delete{
+      position: fixed;
+      margin-top: 165px;
+      margin-left: 70px;
+      background-color: transparent;
+      border: none;
+      font-family: 'Press Start 2P', cursive;
+      color: white;
+    }
+    #delete:hover{
+      cursor: pointer;
+      transform: scale(1.01);
+      color: rgb(175, 175, 175);
+    }
+    
+    #edit:hover{
+      cursor: pointer;
+      transform: scale(1.01);
+      color: rgb(175, 175, 175);
+    }
+    #img{
+      position: fixed;
+      transform: scale(.5);
+      margin-top: -90px;
+      margin-left: -108px;
+
+    }
+    
+
+
+    </style>
+<div id="main">
+
+   <div id="container">
         <article>
-          <h2>
-            {{ card.name }} 
-          </h2>
-          <h3>{{ card.level }}</h3> <br/>
-          <h3>{{ card.genre }}</h3> <br/>
-          <h3>{{ card.atk_points }}</h3> <br/>
-          <h3>{{ card.def_points }}</h3> <br/>
-          <h3>{{ card.img }}</h3> <br/>
-          <h3>{{ card.description }}</h3> <br/>
-          <a href="/cards/{{ card._id }}/edit"><button>Edit</button></a>
-          <form action="/cards/{{ card._id }}?_method=DELETE" method="POST">
-            <input type="submit" value="Delete" />
+          <h3 id="name">{{ card.name }}</h3>
+          <h3 id="level">{{ card.level }}</h3> 
+          <h3 id="genre">{{ card.genre }}</h3> <br/>
+          <br>
+          <img id="img" src="{{ card.img }}" alt="">  <br/>
+          <h3 id="atk">ATK:{{ card.atk_points }}/DEF:{{ card.def_points }}</h3> 
+         
+          <div id="descript">
+          <h3 id="desc">DESCRIPTION:</h3> <p>{{ card.description }} </p><br/>
+          
+        </div>
+        
+        <a id="edit"  href="/cards/{{ card._id }}/edit"><button id="edit">Edit</button></a>
+        
+        <form id="delete" action="/cards/{{ card._id }}?_method=DELETE" method="POST">
+            <input id="delete" type="submit" value="Delete" />
           </form>
-          <a href="/cards/"><button>Back to Main</button></a>
+          
         </article>
       </div>
-{% endblock %}
+    </div>
+    <div id="nav">
+      <a id="backToHome" href="/home/"><button id="backToHome">Back to Home</button></a>
+      <br>
+      <br>
+      
+      <a id="backToDecks" href="/decks/"><button id="backToDecks">Back to Main</button></a> </br>
+      <br>
+      
+      
+      <a id="backToCards" href="/cards/"><button id="backToCards">Back to Main</button></a> </br>
+      
+      
+       </div> 
+</body>
+</html>
+     
