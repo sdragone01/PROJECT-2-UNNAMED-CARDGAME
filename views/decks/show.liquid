@@ -16,16 +16,17 @@
             <input type="submit" value="Delete" />
           </form>
 
+     
+        
           <form id="add-card-to-deck" action='/decks/{{deck._id}}' method="POST">
-            <select name="cardId">
-              {% for card in allCards %}  
-                <option value="{{card._id}}">
+            {% for card in allCards %}  
+            <input type="checkbox" name="cardId" value="{{card._id}}">
                   
                 {{card.name}}
                  {% endfor %}
-                </option>
+              
 
-            </select>
+              </input>
           
            <button type="submit">Add to Deck</button>
           </form>

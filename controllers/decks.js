@@ -9,6 +9,7 @@ const router = express.Router();
 // index route
 router.get("/", (req, res) => {
   Deck.find({})
+   
     .then((decks) => {
       res.render("decks/index.liquid", { decks })
     })
@@ -98,16 +99,25 @@ router.get("/:id", (req, res) => {
   const id = req.params.id;
   Card.find({}).then((allCards) => {
     Deck.findById(id)
+    .populate('cardCol')
       .then((deck) => {
+       
         res.render("decks/show.liquid", { deck, allCards });
       })
+      
   })
+  
+
     .catch((error) => {
       console.log(error);
       res.json({ error });
     });
 
 });
+
+
+
+
 
 // router.get ('/:id', (req,res)=>{
 //   Deck.findById(req.params.id)
