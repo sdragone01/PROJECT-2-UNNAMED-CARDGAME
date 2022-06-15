@@ -7,7 +7,8 @@
 
           <h2>Deck Type: </h2>
           <h3>{{ deck.genre }}</h3>
-          <h1>{{deck.cardCol}}</h1>
+          
+          <ul>{{deck.cardCol}}</ul>
 
 
           <a href="/decks/{{ deck._id }}/edit"><button>Edit</button></a>
@@ -18,7 +19,7 @@
           <form id="add-card-to-deck" action='/decks/{{deck._id}}' method="POST">
             <select name="cardId">
               {% for card in allCards %}  
-                <option value="">
+                <option value="{{card._id}}">
                   
                 {{card.name}}
                  {% endfor %}

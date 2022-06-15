@@ -1,20 +1,3 @@
-// const Deck = require('../models/decks')
-
-// module.exports = {
-//   create
-// }
-
-// function create(req,res){
-//   Deck.findById(req.params.id, function(err,deck){
-//       deck.cards.push(req.body)
-//       deck.save(function(err){
-//         res.redirect(`/decks/${deck._id}`)
-//       })
-//   })
-// }
-
-
-
 
 ////////////////////////////////////////
 // Import Dependencies
