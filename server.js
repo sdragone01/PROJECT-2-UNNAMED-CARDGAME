@@ -39,7 +39,7 @@ router.use(express.static("public"))
 router.use(
   session({
     secret: process.env.SECRET,
-    store: MongoStore.create({ mongoUrl: process.env.DATABASE_URL }),
+    store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI }),
     saveUninitialized: true,
     resave: false,
   })
@@ -70,7 +70,17 @@ router.use("/user", UserRouter);
 ////////////////////////////////////////////
 
 router.use("/home",(req,res)=>{
+
   res.render("home.liquid")
+});
+router.use("/info",(req,res)=>{
+  res.render("info.liquid")
+});
+router.use("/about",(req,res)=>{
+  res.render("about.liquid")
+});
+router.use("/idk",(req,res)=>{
+  res.render("idk.liquid")
 });
 
 

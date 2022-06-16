@@ -136,6 +136,7 @@
     }
     #cID{
       width: 700px;
+     
     }
   
 
@@ -145,8 +146,7 @@
       color: white;
     }
 
-    #input{
-      
+    input{
       background-color: black;
       color: white;
 
@@ -170,6 +170,8 @@
 
       <h3 id="deckTypeTitle">Deck Type: {{ deck.genre }}</h3>
       <h2>Cards In Deck:</h2>
+
+
       <div id="cID">
   
       {%for cardCol in deck.cardCol%}
@@ -178,8 +180,7 @@
       {%endfor%}
 
       </article>
-
-     </div>
+    </div>
   
     <h2>Cards In Inventory:</h2>
      
@@ -187,7 +188,7 @@
     
       <form id="add-card-to-deck" action='/decks/{{deck._id}}' method="POST">
         {% for card in allCards %}  
-        <input  type="checkbox" name="cardId" value="{{card._id}}">
+        <input id="input" type="checkbox" name="cardId" value="{{card._id}}">
               
             {{card.name}}
              {% endfor %}
@@ -202,7 +203,7 @@
       </form>
     
   </article>
-
+</div>
       
  </div> 
      
