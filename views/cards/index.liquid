@@ -88,6 +88,27 @@
       transform: scale(1.01);
         color: rgb(175, 175, 175);
     }
+    #cardsin{
+      font-size: large;
+      color: white;
+      line-height: 30px;
+     display: flex;
+     flex-direction: column;
+      flex-wrap: wrap;
+ 
+      
+     
+     
+    }
+    #cID{
+      margin-top: 10px;
+      width: 700px;
+      max-height: 400px ;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+     
+    }
 
 
 
@@ -98,17 +119,18 @@
     <h1>CARDS <a id="newDeck" href="/cards/new"><button id="newDeck">Create A New Card</button></a></h1> 
 <br>
 <br>
-
+<div id="cID">
     {% for card in cards %}
-<article>
+<article id="cardsin">
   <a href="/cards/{{ card._id }}">
-    <h2>
+    <h2 id='cardsin'>
       {{card.name}} 
     </h2>
   </a>
 </article>
-{% endfor %}
 
+{% endfor %}
+</div>
 </div>
 </div>
 

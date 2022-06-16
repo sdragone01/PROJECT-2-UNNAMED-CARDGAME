@@ -27,30 +27,39 @@ body{
       height: 540px;
      background-size: cover;
     }
-    #nav{
-      position: fixed;
-      margin-left: 825px;
-      margin-top: -80px;
-
-    }
-    #backToHome{
-      height: 110px;
-      background-color: transparent;
-      color: transparent;
-      border: none;
-    }
-    #backToDecks{
-      height: 80px;
-      background-color: transparent;
-      color: transparent;
-      border: none;
-    }
-    #backToCards{
-      height: 130px;
-      background-color: transparent;
-      color: transparent;
-      border: none;
-    }
+    #nav {
+        position: fixed;
+        margin-left: 825px;
+        margin-top: 25px;
+  
+      }
+  
+      #backToHome {
+        height: 110px;
+        background-color: transparent;
+        color: transparent;
+        border: none;
+      }
+  
+      #backToDecks {
+        height: 80px;
+        background-color: transparent;
+        color: transparent;
+        border: none;
+      }
+  
+      #backToCards {
+        height: 130px;
+        background-color: transparent;
+        color: transparent;
+        border: none;
+      }
+  
+      button:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        color: rgb(175, 175, 175);
+      }
     #container{
       position: fixed;
       margin-top: 29px;
@@ -87,21 +96,22 @@ body{
     <h1>hello</h1>
     <a id = "logout"href="/user/logout"><buttoni d = "logout">Logout</button></a> 
    
-    <div id="nav">
-        <a id="backToHome" href="/home/"><button id="backToHome">Back to Home</button></a>
-        <br>
-        <br>
-        
-        <a id="backToDecks" href="/decks/"><button id="backToDecks">Back to Main</button></a> </br>
-        <br>
-        
-        
-        <a id="backToCards" href="/cards/"><button id="backToCards">Back to Main</button></a> </br>
-        
-        
-     </div>   
+    
      </div> 
 </div>
+<div id="nav">
+  <a id="backToHome" href="/home/"><button id="backToHome">Back to Home</button></a>
+  <br>
+  <br>
+  
+  <a id="backToDecks" href="/decks/"><button id="backToDecks">Back to Main</button></a> </br>
+  <br>
+  
+  
+  <a id="backToCards" href="/cards/"><button id="backToCards">Back to Main</button></a> </br>
+  
+  
+</div>   
 </body>
 </html>
 

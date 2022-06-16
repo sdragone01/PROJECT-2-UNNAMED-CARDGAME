@@ -100,6 +100,13 @@
       transform: scale(1.1);
       color: rgb(175, 175, 175);
     }
+    select{
+        background-color: black;
+        font-family: 'Press Start 2P', cursive;
+        color: white;
+        height: 20px;
+        width: auto;
+      }
   </style>
 
 
@@ -115,13 +122,21 @@
         <fieldset>
 
           <label>
-            NAME:<input type="text" name="name" />
-          </label>
+            NAME:</label>
+            <input type="text" name="name" maxlength="19" />
+          
           <br>
           <br>
-          <label>
-            TYPE:<input type="text" name="genre" />
-          </label>
+          <div id="type">
+          <label>TYPE:</label>
+          <select name="genre" id="">
+            <option value="FIRE">FIRE</option>
+            <option value="DARK">DARK</option>
+            <option value="EARTH">EARTH</option>
+            <option value="GUNNER">GUNNER</option>
+            <option value="MACHINE">MACHINE</option>
+          </select>
+          </div>
 
         </fieldset>
         <br>

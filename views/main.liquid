@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <style>
+body{
+   
+      color: white;
+      display: flex;
+      justify-content: center;
+      font-family: 'Press Start 2P', cursive;
+      background-size: 50%;
+    }
+ 
+    #main{
+      position: fixed;
+      justify-content: center;
+      background-color: black ;
+      width: 960px;
+      height: 540px;
+     background-size: cover;
+    }
+    h1{
+      
+      justify-content: center;
+      
+      text-align: center;
+      margin-top: 20%;
+    }
+    h2{
+      
+      
+      
+      text-align: center;
+      
+    }
+    img{
+      
+      
+      width: 80px;
+    }
+
+   #guys{
+      display: inline-flex;
+      justify-content: center;
+      margin-left: 25%;
+      text-align: center;
+      margin-top: 20%;
+   }
+
+
+   #log{
+      color: black;
+      z-index: 3;
+   }
+   #log:hover{
+      color: white;
+      transition: 1000ms;  
+     
+   }
+   #log:hover ~#blackbox2,
+   #log:hover ~#blackbox3,
+   #log:hover ~#blackbox4,
+   #log:hover ~#blackbox5{
+      z-index: 4;
+      opacity: 100;
+      transition: 3000ms;  
+     
+   }
+
+   #sign{
+      color: black;
+      z-index: 3;
+   }
+   #sign:hover{
+      color: white;
+      transition: 1000ms;
+   }
+   #sign:hover ~#blackbox,
+   #sign:hover ~#blackbox3,
+   #sign:hover ~#blackbox4,
+   #sign:hover ~#blackbox5{
+      z-index: 4;
+      opacity: 100%;
+      transition: 3000ms;  
+     
+   }
+ 
+   #about{
+      color: black;
+      z-index: 3;
+   }
+   #about:hover{
+      color: white;
+      transition: 1000ms;
+   }
+   #about:hover ~#blackbox,
+   #about:hover ~#blackbox2,
+   #about:hover ~#blackbox3,
+   #about:hover ~#blackbox5{
+      z-index: 4;
+      opacity: 100%;
+      transition: 3000ms;  
+     
+   }
+   #info{
+      color: black;
+      z-index: 3;
+   }
+   #info:hover{
+      color: white;
+      transition: 1000ms;
+   }
+   #info:hover ~#blackbox,
+   #info:hover ~#blackbox2,
+   #info:hover ~#blackbox4,
+   #info:hover ~#blackbox5{
+      z-index: 4;
+      opacity: 100%;
+      transition: 3000ms;  
+     
+   }
+   
+   #idk{
+      color: black;
+      z-index: 3;
+   }
+   #idk:hover{
+      color: white;
+      transition: 1000ms;
+   }
+   #idk:hover ~#blackbox,
+   #idk:hover ~#blackbox2,
+   #idk:hover ~#blackbox3,
+   #idk:hover ~#blackbox4{
+      z-index: 4;
+      opacity: 100%;
+      transition: 3000ms;  
+     
+   }
+   #blackbox{
+      position: fixed;
+      background-color: black;
+      width:80px;
+      height: 80px;
+      margin-top: 45px;
+      margin-left: -370px;
+      z-index: 2;
+      opacity: 0%;
+      
+   }
+   
+   #blackbox2{
+      position: fixed;
+      background-color: black;
+      width:80px;
+      height: 80px;
+      margin-top: 45px;
+      margin-left: -170px;
+      z-index: 2;
+      opacity: 0%;
+   }
+   #blackbox3{
+      position: fixed;
+      background-color: black;
+      width:80px;
+      height: 90px;
+      margin-top: 40px;
+      margin-left: 10px;
+      z-index: 2;
+      opacity: 0%;
+   }
+   #blackbox4{
+      position: fixed;
+      background-color: black;
+      width:80px;
+      height: 80px;
+      margin-top: 40px;
+      margin-left: 200px;
+      z-index: 2;
+      opacity: 0%;
+   }
+   #blackbox5{
+      position: fixed;
+      background-color: black;
+      width:80px;
+      height: 80px;
+      margin-top: 40px;
+      margin-left: 380px;
+      z-index: 2;
+      opacity: 0%;
+   }
+   
+    
+
+
+    </style>
+
+<div id="main">
+  
+  
+<div id="guys">
+
+   <h3 id="log">LOGIN</br>
+      <a href="/user/login"><img id="mach" src="https://i.ibb.co/Xj5KKX1/Machine.gif"></a>
+   </h3>
+
+
+   <h3 id="sign">SIGNUP</br>
+      <a href="/user/signup"><img id="gun" src="https://i.ibb.co/s3Q0Lp0/gunner.gif"></a>
+   </h3>
+
+
+   <h3 id="info">INFO</br>
+      <img id="ear" src="https://i.ibb.co/8gQD7zY/earth-monster.gif">
+   </h3>
+
+
+   <h3 id="about">ABOUT</br>
+      <img id="drk" src="https://i.ibb.co/Ky2wjg5/Dark.gif">
+   </h3> 
+
+
+   <h3 id="idk">IDK</br>
+      <img id="fire" src="https://i.ibb.co/jycBRKW/firemonster.gif" alt="">
+   </h3>
+
+   <div id="blackbox"></div>
+   <div id="blackbox2"></div>
+   <div id="blackbox3"></div>
+   <div id="blackbox4"></div>
+   <div id="blackbox5"></div>
+
+</div>
+  
+</div>   
+</body>
+</html>
+

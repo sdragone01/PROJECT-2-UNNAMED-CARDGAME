@@ -1,31 +1,237 @@
-{% layout "layout.liquid" %} {% block content %}
-<div>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Card</title>
+</head>
+
+<body>
+
+  <body>
+    <style>
+      body {
+        color: white;
+        display: flex;
+        justify-content: center;
+        font-family: 'Press Start 2P', cursive;
+        background-size: 50%;
+      }
+  
+      #main {
+        position: fixed;
+        justify-content: center;
+        background: url("https://i.ibb.co/kys0P8q/evenbetterbetter.png");
+        width: 960px;
+        height: 540px;
+  
+        background-size: cover;
+      }
+  
+      h1 {
+        margin-top: 17px;
+        margin-left: 0px;
+        font-size: 25px;
+      }
+  
+      #container {
+        position: fixed;
+        margin-top: 29px;
+        margin-left: 30px;
+      }
+  
+      fieldset {
+        border: none;
+  
+      }
+  
+      input {
+        background-color: transparent;
+        font-family: 'Press Start 2P', cursive;
+        color: white;
+  
+      }
+  
+      #sub {
+        border: none;
+        margin-top: 405px;
+        font-size: 18px;
+        margin-left: 7px;
+      }
+  
+      #sub:hover {
+        cursor: pointer;
+        transform: scale(1.01);
+        color: rgb(175, 175, 175);
+  
+      }
+  
+      #nav {
+        position: fixed;
+        margin-left: 825px;
+        margin-top: 25px;
+  
+      }
+  
+      #backToHome {
+        height: 110px;
+        background-color: transparent;
+        color: transparent;
+        border: none;
+      }
+  
+      #backToDecks {
+        height: 80px;
+        background-color: transparent;
+        color: transparent;
+        border: none;
+      }
+  
+      #backToCards {
+        height: 130px;
+        background-color: transparent;
+        color: transparent;
+        border: none;
+      }
+  
+      button:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        color: rgb(175, 175, 175);
+      }
+
+      #title{
+        position: fixed;
+        margin-top: 17px;
+        margin-left: -3px;
+
+      }
+      #name{
+        position: fixed;
+        margin-top: 125px;
+      }
+      #level{
+        position: fixed;
+        margin-top: 175px;
+      }
+      #type{
+        position: fixed;
+        margin-top: 225px;
+      }
+      #atk{
+        position: fixed;
+        margin-top:275px;
+      }
+      #def{
+        position: fixed;
+        margin-top: 325px;
+      }
+      #descp{
+        position: fixed;
+        margin-top: 375px;
+      }
+      select{
+        background-color: black;
+        font-family: 'Press Start 2P', cursive;
+        color: white;
+        height: 20px;
+        width: auto;
+      }
+
+    </style>
+
+
+<div id="main">
+  <div id="container">
     <form action="/cards/{{card._id}}?_method=PUT" method="post">
+
     <fieldset>
-      <legend>Edit {{card.name}}</legend>
-      <label>
-        NAME:<input type="text" name="name" value="{{card.name}}"  />
-      </label>
-      <label>
-        level:<input type="text" name="level" value="{{card.level}}" />
-      </label>
-      <label>
-        genre:<input type="text" name="genre" value="{{card.genre}}" />
-      </label>
-      <label>
-        atk_points:<input type="text" name="atk_points" value="{{card.atk_points}}" />
-      </label>
-      <label>
-        def_points:<input type="text" name="def_points" value="{{card.def_points}}" />
-      </label>
-      <label>
-        img:<input type="text" name="img" value="{{card.img}}" />
-      </label>
-      <label>
-        description:<input type="text" name="description" value="{{card.description}}"  />
-      </label>
+      <legend id="title">Edit {{card.name}}</legend>
+
+      <label id="name">NAME:<input type="text" name="name"  maxlength="9" value="{{card.name}}"/></label>
+
+      <div id="level">
+     <label>LEVEL:</label>
+      <select name="level">
+        <option value ="{{card.level}}">{{card.level}}</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      </div>
+
+      <div id="type">
+      <label>TYPE:</label>
+        <select name="genre" id="">
+          <option value ="{{card.genre}}">{{card.genre}}</option>
+          <option value="FIRE">FIRE</option>
+          <option value="DARK">DARK</option>
+          <option value="EARTH">EARTH</option>
+          <option value="GUNNER">GUNNER</option>
+          <option value="MACHINE">MACHINE</option>
+        </select>
+      </div>
+
+      <div id="atk">
+      <label>ATTACK POINTS:</label>
+        <select name="atk_points">
+          <option value ="{{card.atk_points}}">{{card.atk_points}}</option>
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+      </select>
+      </div>
+
+      <div id="def">
+      <label>DEFENSE POINTS:</label>
+        <select name="def_points">
+          <option value ="{{card.def_points}}">{{card.def_points}}</option>
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+      </select>
+      </div>
+
+
+      <label id="descp">DESCRIPTION:<input type="text" name="description" maxlength="50" value="{{card.description}}"/></label>
+
+      
     </fieldset>
-    <input type="submit" value="Edit" />
+    <input id="sub" type="submit" value="EDIT" />
   </form>
+
 </div>
-{% endblock %}
+</div>
+<div id="nav">
+  <a id="backToHome" href="/home/"><button id="backToHome">Back to Home</button></a>
+  <br>
+  <br>
+
+  <a id="backToDecks" href="/decks/"><button id="backToDecks">Back to Main</button></a> </br>
+  <br>
+
+
+  <a id="backToCards" href="/cards/"><button id="backToCards">Back to Main</button></a> </br>
+
+
+</div>
+
+</body>
+
+</html>

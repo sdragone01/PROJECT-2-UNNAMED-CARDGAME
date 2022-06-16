@@ -78,7 +78,7 @@ router.use("/home",(req,res)=>{
 
 
 router.get("/", (req, res) => {
-  res.render("index.ejs");
+  res.render("main.liquid");
 });
 
   
