@@ -85,4 +85,4 @@ router.get("/", (req, res) => {
 
 
 const PORT = process.env.PORT;
-router.listen(PORT, () => console.log(`Now Listening on port ${PORT}`));
+router.listen(PORT || 3000 );

@@ -59,7 +59,9 @@
   
       #sub {
         border: none;
-        margin-left: 290px;
+        margin-top: 405px;
+        font-size: 18px;
+        margin-left: 7px;
       }
   
       #sub:hover {
@@ -102,18 +104,58 @@
         transform: scale(1.1);
         color: rgb(175, 175, 175);
       }
+
+      #title{
+        position: fixed;
+        margin-top: 17px;
+        margin-left: -3px;
+
+      }
+      #name{
+        position: fixed;
+        margin-top: 125px;
+      }
+      #level{
+        position: fixed;
+        margin-top: 175px;
+      }
+      #type{
+        position: fixed;
+        margin-top: 225px;
+      }
+      #atk{
+        position: fixed;
+        margin-top:275px;
+      }
+      #def{
+        position: fixed;
+        margin-top: 325px;
+      }
+      #descp{
+        position: fixed;
+        margin-top: 375px;
+      }
+      select{
+        background-color: black;
+        font-family: 'Press Start 2P', cursive;
+        color: white;
+        height: 20px;
+        width: auto;
+      }
+
     </style>
 
 
 <div id="main">
   <div id="container">
   <form action="/cards" method="post">
+
     <fieldset>
+      <legend id="title">CREATE A NEW CARD</legend>
 
-      <legend>Create a New card</legend>
+      <label id="name">NAME:<input type="text" name="name"  maxlength="9"/></label>
 
-      <label>NAME:<input type="text" name="name"  maxlength="9"/></label>
-
+      <div id="level">
      <label>LEVEL</label>
       <select name="level">
         <option value="0">0</option>
@@ -123,7 +165,9 @@
         <option value="4">4</option>
         <option value="5">5</option>
       </select>
+      </div>
 
+      <div id="type">
       <label>TYPE:</label>
         <select name="genre" id="">
           <option value="FIRE">FIRE</option>
@@ -132,7 +176,9 @@
           <option value="GUNNER">GUNNER</option>
           <option value="MACHINE">MACHINE</option>
         </select>
-  
+      </div>
+
+      <div id="atk">
       <label>ATTACK POINTS:</label>
         <select name="atk_points">
           <option value="0">0</option>
@@ -142,7 +188,9 @@
           <option value="4">4</option>
           <option value="5">5</option>
       </select>
+      </div>
 
+      <div id="def">
       <label>DEFENSE POINTS:</label>
         <select name="def_points">
           <option value="0">0</option>
@@ -152,12 +200,12 @@
           <option value="4">4</option>
           <option value="5">5</option>
       </select>
-      
-      <label>
-        description:<input type="text" name="description" maxlength="50" />
-      </label>
+      </div>
+
+
+      <label id="descp">DESCRIPTION:<input type="text" name="description" maxlength="50" /></label>
     </fieldset>
-    <input type="submit" value="create new card" />
+    <input id="sub" type="submit" value="CREATE" />
   </form>
 
 </div>
