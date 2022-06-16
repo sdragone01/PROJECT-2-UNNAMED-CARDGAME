@@ -109,6 +109,7 @@ router.put("/:id", (req, res) => {
 // show route
 router.get("/:id", (req, res) => {
   const id = req.params.id;
+  req.body.username = req.session.username;
   Card.find({}).then((allCards) => {
     Deck.findById(id)
     .populate('cardCol','name')
