@@ -39,6 +39,7 @@ router.post('/:id', (req, res) => {
   const id = req.params.id;
   console.log("this is the card were adding")
   console.log(req.body)
+  req.body.username = req.session.username;
   Deck.findById(id)
     .then((deck) => {
       deck.cardCol.push(req.body.cardId)
