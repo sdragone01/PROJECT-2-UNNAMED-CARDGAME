@@ -66,13 +66,20 @@
       position: fixed;
       margin-top: 250px;
       margin-left: 5px;
+      
     }
     #desc{
       font-size: 15px;
+      
     }
     p{
       font-size: small;
       color: rgb(203, 203, 203);
+      width: 225px;
+      max-height: 50px;
+      margin-top: -10px;
+      font-size: 50%;
+      line-height: 15px;
     }
     #nav {
       position: fixed;
@@ -135,9 +142,9 @@
     }
     #img{
       position: fixed;
-      transform: scale(.5);
-      margin-top: -90px;
-      margin-left: -108px;
+      transform: scale(.7);
+      margin-top: -40px;
+      margin-left: -60px;
 
     }
     
@@ -152,7 +159,23 @@
           <h3 id="level">{{ card.level }}</h3> 
           <h3 id="genre">{{ card.genre }}</h3> <br/>
           <br>
-          <img id="img" src="{{ card.img }}" alt="">  <br/>
+
+          {%if card.genre == "FIRE"%}
+              <img id="img" src="https://i.ibb.co/jycBRKW/firemonster.gif" alt="">
+          {%elsif card.genre == "DARK"%}
+              <img id="img" src="https://i.ibb.co/Ky2wjg5/Dark.gif">
+          {%elsif card.genre == "EARTH"%}
+              <img id="img" src="https://i.ibb.co/8gQD7zY/earth-monster.gif">
+          {%elsif card.genre == "GUNNER"%}
+              <img id="img" src="https://i.ibb.co/s3Q0Lp0/gunner.gif">
+          {%elsif card.genre == "MACHINE"%}
+              <img id="img" src="https://i.ibb.co/Xj5KKX1/Machine.gif">
+
+
+          
+          
+          {%endif%}
+          <br/>
           <h3 id="atk">ATK:{{ card.atk_points }}/DEF:{{ card.def_points }}</h3> 
          
           <div id="descript">

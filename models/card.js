@@ -8,6 +8,7 @@ const { Schema, model } = mongoose;
 const cardSchema = new Schema({
     name: {
         type: String,
+        maxlength:9,
         required: true,
     },
     level: {
@@ -34,7 +35,7 @@ const cardSchema = new Schema({
     },
     img:{
         type: String,
-        required: true,
+        required: false,
     },
     description:{
         type: String,
