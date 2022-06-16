@@ -180,12 +180,11 @@
       {%endfor%}
 
       </article>
-    </div>
+  
   
     <h2>Cards In Inventory:</h2>
      
  
-    
       <form id="add-card-to-deck" action='/decks/{{deck._id}}' method="POST">
         {% for card in allCards %}  
         <input id="input" type="checkbox" name="cardId" value="{{card._id}}">
@@ -198,10 +197,11 @@
           <br>
           <br>
 
-      
+       
+    
        <button id="sub" type="submit">ADD TO DECK</button>
       </form>
-    
+     </div>
   </article>
 </div>
       
