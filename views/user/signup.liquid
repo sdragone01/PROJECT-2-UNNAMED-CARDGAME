@@ -1,14 +1,107 @@
-{% layout "layout.liquid" %} {% block content %}
-<div>
-  <form action="/user/signup" method="post">
-    <fieldset>
-      <legend>New User</legend>
-      <label>USERNAME: <input type="text" name="username" required /> </label>
-      <label
-        >PASSWORD: <input type="password" name="password" required />
-      </label>
-      <input type="submit" value="Create Account" />
-    </fieldset>
-  </form>
-</div>
-{% endblock %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <style>
+body{
+   
+      color: white;
+      display: flex;
+      justify-content: center;
+      font-family: 'Press Start 2P', cursive;
+      background-size: 50%;
+    }
+ 
+    #main{
+      position: fixed;
+      justify-content: center;
+      background-color: black ;
+      width: 960px;
+      height: 540px;
+     background-size: cover;
+    }
+    h1{
+      
+      justify-content: center;
+      
+      text-align: center;
+      margin-top: 20%;
+    }
+    h2{
+      
+      text-align: center;
+      
+    }
+    #content{
+      text-align: center;
+       margin-top: 10%; 
+      
+    }
+    fieldset{
+      border: none;
+      line-height: 50px;
+    }
+    input{
+      background-color: black;
+      font-family: 'Press Start 2P', cursive;
+      color: white;
+    }
+    #sub{
+      border: none;
+      font-size:20px;
+    }
+    #sub:hover{
+      cursor: pointer;
+      transform: scale(1.1);
+
+    }
+    h3{
+      color: black;
+      
+    }
+    img{
+      width: 80px;
+      opacity: 100%;
+    }
+    #bak:hover{
+      color:white;
+      transition: 2000ms;
+    }
+</style>
+
+
+      <div id="main">
+        <div id="content">
+          <h3 id="bak">GO BACK</br>
+            <a href="/"><img id="mach" src="https://i.ibb.co/s3Q0Lp0/gunner.gif"></a>
+         </h3>
+         <form action="/user/signup" method="post">
+          <fieldset>
+            
+            <label>USERNAME:</label> 
+              <input type="text" name="username" required /> 
+              <br>
+            <label>PASSWORD: </label>
+              <input type="password" name="password" required />
+              <br>
+            
+            <input id="sub" type="submit" value="Create Account" />
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  
+  </div>   
+  </body>
+  </html>
+  
