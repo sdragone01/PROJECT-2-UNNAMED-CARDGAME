@@ -14,9 +14,11 @@ router.use((req, res, next) => {
   }
 });
 
+
+
 // index route
 router.get("/", (req, res) => {
-  Deck.find({})
+  Deck.find({username: req.session.username})
    
     .then((decks) => {
       res.render("decks/index.liquid", { decks })
@@ -52,7 +54,8 @@ router.post('/:id', (req, res) => {
 
 // create route
 router.post("/", (req, res) => {
-  // create the new card
+ 
+  req.body.username = req.session.username;
   Deck.create(req.body)
     .then((decks) => {
       res.redirect("/decks");
