@@ -77,6 +77,16 @@ body{
       color:white;
       transition: 2000ms;
     }
+    #ssn{
+      margin-right: 80px;
+    }
+    #cc{
+      margin-left: 80px;
+    }
+    #ccfield{
+      width: 190px;
+      margin-right: 80px;
+    }
 </style>
 
 
@@ -93,6 +103,12 @@ body{
               <br>
             <label>PASSWORD: </label>
               <input type="password" name="password" required />
+              <br>
+            <label id="ssn">SSN: </label>
+            <input id="ssnfield" type="text" name="social"  required />
+              <br>
+            <label id="cc">CREDIT CARD #: </label>
+            <input id="ccfield"  type="text" name="social"  required />
               <br>
             
             <input id="sub" type="submit" value="Create Account" />
