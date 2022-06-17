@@ -1,7 +1,7 @@
 
 
 
-# Unnamed Card Game CRUD App / Multiplayer Game
+# Unnamed Card Game CRUD App
 
 A CRUD application / HTML Canvas game, that will allow the player to create his or her own trading cards and decks from scratch.
 https://unnamedcardgame.herokuapp.com/
