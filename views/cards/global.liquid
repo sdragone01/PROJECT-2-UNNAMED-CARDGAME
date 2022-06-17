@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,26 +71,11 @@
       background-color: transparent;
       border: none;
       color: white;
-      margin-left: 175px;
-      
+      margin-left: 125px;
     }
     #newDeck:hover{
       cursor: pointer;
       transform: scale(1.01);
-        color: rgb(175, 175, 175);
-    }
-    #newDeck2{
-      position: fixed;
-      font-family: 'Press Start 2P', cursive;
-      background-color: transparent;
-      border: none;
-      color: white;
-      margin-left: 125px;
-      margin-top: -37px;
-    }
-    #newDeck2:hover{
-      cursor: pointer;
-     
         color: rgb(175, 175, 175);
     }
     h2{
@@ -106,7 +90,7 @@
     #cardsin{
       font-size: large;
       color: white;
-      line-height: 30px;
+      line-height: 5px;
      display: flex;
      flex-direction: column;
       flex-wrap: wrap;
@@ -118,11 +102,18 @@
     #cID{
       margin-top: 10px;
       width: 700px;
-      max-height: 400px ;
+      max-height: 375px ;
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
      
+    }
+    #user{
+        font-size: 10px;
+        line-height: 0px;
+       padding-top: 10px;
+       color: rgb(143, 143, 143);
+        
     }
 
 
@@ -131,22 +122,21 @@
 
 <div id="main">
   <div id="container">
-    
-    <h1>CARDS: <a id="newDeck" href="/cards/new"><button id="newDeck">New Card</button></a></h1> 
+    <h1>CARDS <a id="newDeck" href="/cards"><button id="newDeck">Back to Your Cards</button></a></h1> 
 <br>
 <br>
 <div id="cID">
     {% for card in cards %}
 <article id="cardsin">
+    
   <a href="/cards/{{ card._id }}">
     <h2 id='cardsin'>
-      {{card.name}}
+      {{card.name}} <p id="user">{{card.username}}</p>
     </h2>
   </a>
 </article>
 
 {% endfor %}
-<a id="newDeck2" href="/cards/global"><button id="newDeck2">Other Users Cards </button></a>
 </div>
 </div>
 </div>

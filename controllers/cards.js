@@ -51,6 +51,16 @@ router.get("/", (req, res) => {
         res.json({ error })
       })
   })
+  // global index route
+router.get("/global", (req, res) => {
+    Card.find({})
+      .then((cards) => {
+        res.render("cards/global.liquid", { cards })
+      })
+      .catch((error) => {
+        res.json({ error })
+      })
+  })
 
 
  
