@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card</title>
+</head>
+
+<body>
+  <style>
+    body {
+      color: white;
+      display: flex;
+      justify-content: center;
+      font-family: 'Press Start 2P', cursive;
+      background-size: 50%;
+    }
+
+    #main {
+      position: fixed;
+      justify-content: center;
+      background: url("https://i.ibb.co/vscvN6W/new-card-screen.png");
+      width: 960px;
+      height: 540px;
+      background-size: cover;
+    }
+
+    #container {
+      position: fixed;
+      margin-top: 29px;
+      margin-left: 30px;
+    }
+
+    article {
+      position: fixed;
+      margin-left: 255px;
+
+    }
+
+    #name {
+      position: relative;
+      margin-top: 10px;
+      width: 150px;
+      max-height: 50px;
+      font-size: 100%;
+      background-color: black;
+    }
+
+    #level {
+      position: fixed;
+      margin-top: 12px;
+      margin-left: 210px;
+      color: black;
+    }
+
+    #genre {
+      position: fixed;
+      margin-top: 12px;
+      margin-left: 0px;
+      color: black;
+    }
+
+    #atk {
+      position: fixed;
+      margin-top: 245px;
+      font-size: x-small;
+      margin-left: 120px;
+    }
+
+    #descript {
+      position: fixed;
+      margin-top: 250px;
+      margin-left: 5px;
+
+    }
+
+    #desc {
+      font-size: 15px;
+
+    }
+
+    p {
+      font-size: small;
+      color: rgb(203, 203, 203);
+      width: 225px;
+      max-height: 50px;
+      margin-top: -10px;
+      font-size: 50%;
+      line-height: 15px;
+    }
+
+    #nav {
+      position: fixed;
+      margin-left: 825px;
+      margin-top: 25px;
+
+    }
+
+    #backToHome {
+      height: 110px;
+      background-color: transparent;
+      color: transparent;
+      border: none;
+    }
+
+    #backToDecks {
+      height: 80px;
+      background-color: transparent;
+      color: transparent;
+      border: none;
+    }
+
+    #backToCards {
+      height: 130px;
+      background-color: transparent;
+      color: transparent;
+      border: none;
+    }
+
+    button:hover {
+      cursor: pointer;
+      transform: scale(1.01);
+      color: rgb(175, 175, 175);
+
+    }
+
+    #edit {
+      position: fixed;
+      margin-top: 165px;
+      margin-left: 0px;
+      background-color: transparent;
+      border: none;
+      font-family: 'Press Start 2P', cursive;
+      color: white;
+    }
+
+    #delete {
+      position: fixed;
+      margin-top: 165px;
+      margin-left: 70px;
+      background-color: transparent;
+      border: none;
+      font-family: 'Press Start 2P', cursive;
+      color: white;
+    }
+
+    #delete:hover {
+      cursor: pointer;
+      transform: scale(1.01);
+      color: rgb(175, 175, 175);
+    }
+
+    #edit:hover {
+      cursor: pointer;
+      transform: scale(1.01);
+      color: rgb(175, 175, 175);
+    }
+
+    #img {
+      position: fixed;
+      transform: scale(.7);
+      margin-top: -40px;
+      margin-left: -60px;
+
+    }
+
+    #icon {
+      position: fixed;
+      transform: scale(.05);
+      margin-top: -60px;
+      margin-left: -305px;
+
+    }
+
+
+  </style>
+  <div id="main">
+
+    <div id="container">
+      <article>
+        <h3 id="name">{{ card.name }}</h3>
+        <h3 id="level">{{ card.level }}</h3>
+        <h3 id="genre">{{ card.genre }}</h3> <br />
+        <br>
+
+        {%if card.genre == "FIRE"%}
+        <img id="img" src="https://i.ibb.co/jycBRKW/firemonster.gif" alt="">
+        <img id="icon" src="https://i.ibb.co/g6Prb3M/fire-icon.png" alt="">
+        {%elsif card.genre == "DARK"%}
+        <img id="img" src="https://i.ibb.co/Ky2wjg5/Dark.gif">
+        <img id="icon" src="https://i.ibb.co/3Nz1Xn2/dark-icon.png">
+        {%elsif card.genre == "EARTH"%}
+        <img id="img" src="https://i.ibb.co/8gQD7zY/earth-monster.gif">
+        <img id="icon" src="https://i.ibb.co/hL719cF/rock-icon.png">
+        {%elsif card.genre == "GUNNER"%}
+        <img id="img" src="https://i.ibb.co/s3Q0Lp0/gunner.gif">
+        <img id="icon" src="https://i.ibb.co/XWyjt7V/gunner-icon.png">
+        {%elsif card.genre == "MACHINE"%}
+        <img id="img" src="https://i.ibb.co/Xj5KKX1/Machine.gif">
+        <img id="icon" src="https://i.ibb.co/84NCqDB/machine-icon.png">
+
+
+
+
+        {%endif%}
+ 
+      
+
+        <br />
+        <h3 id="atk">ATK:{{ card.atk_points }}/DEF:{{ card.def_points }}</h3>
+
+        <div id="descript">
+          <h3 id="desc">DESCRIPTION:</h3>
+          <p>{{ card.description }} </p><br />
+
+        </div>
+
+  
+       
+
+      </article>
+    </div>
+  </div>
+  <div id="nav">
+    <a id="backToHome" href="/home/"><button id="backToHome">Back to Home</button></a>
+    <br>
+    <br>
+
+    <a id="backToDecks" href="/decks/"><button id="backToDecks">Back to Main</button></a> </br>
+    <br>
+
+
+    <a id="backToCards" href="/cards/"><button id="backToCards">Back to Main</button></a> </br>
+
+
+  </div>
+</body>
+
+</html>

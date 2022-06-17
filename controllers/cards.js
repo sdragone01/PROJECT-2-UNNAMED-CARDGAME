@@ -138,6 +138,22 @@ router.get("/:id", (req, res) => {
         res.json({ error });
       });
   });
+
+router.get("/global/:id", (req, res) => {
+    // get the id from params
+    const id = req.params.id;
+  
+    // find the particular card from the database
+    Card.findById(id)
+      .then((card) => {
+        // render the template with the data from the database
+        res.render("cards/globalshow.liquid", { card });
+      })
+      .catch((error) => {
+        console.log(error);
+        res.json({ error });
+      });
+  });
 //////////////////////////////////////////
 // Export the Router
 //////////////////////////////////////////
