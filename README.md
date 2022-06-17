@@ -1,8 +1,10 @@
 
+
+
 # Unnamed Card Game CRUD App / Multiplayer Game
 
-A CRUD application / HTML Canvas game, that will allow the player to create his or her own trading cards and decks from scratch and go head to head with friends in an online card battle.
-
+A CRUD application / HTML Canvas game, that will allow the player to create his or her own trading cards and decks from scratch.
+https://unnamedcardgame.herokuapp.com/
 
 
 ## As a User I Want To
@@ -10,7 +12,6 @@ A CRUD application / HTML Canvas game, that will allow the player to create his 
 - Create new trading cards
 - Organize card collections into new deck saves
 - Update or delete: cards, decks and user profiles
-- Engage in fun online multiplayer with friends. 
 
 
 
